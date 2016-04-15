@@ -47,4 +47,4 @@ gulp.task('watch', function() {
 })
 
 gulp.task('default', ['server', 'open-browser', 'watch']);
-gulp.task('server', ['server']);
+gulp.task('prod', ['css', 'server']);
