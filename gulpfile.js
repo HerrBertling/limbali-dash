@@ -8,43 +8,43 @@ var open = require('gulp-open');
 var connect = require('gulp-connect');
 var watch = require('gulp-watch');
 
+var allSources = ['dest/*', '*.html', 'js/**/*.js'];
+
 gulp.task('css', function () {
     var processors = [
         autoprefixer({browsers: ['last 2 versions']}),
         cssnext,
         precss
     ];
-    return gulp.src('./css/*.css')
+    gulp.src('./css/*.css')
         .pipe(postcss(processors))
         .pipe(nano())
         .pipe(gulp.dest('./dest'));
 });
 
-gulp.task('stream', function () {
-    return gulp.src('css/**/*.css')
-        .pipe(watch('css/**/*.css'))
-        .pipe(gulp.dest('css'));
-});
-
-gulp.task('callback', function (cb) {
-    watch('css/**/*.css', function () {
-        gulp.src('css/**/*.css')
-            .pipe(watch('css/**/*.css'))
-            .on('end', cb);
-    });
-});
-
-gulp.task('connect', function() {
+gulp.task('server', function () {
     connect.server({
-        port: 1337
+        port: 1337,
+        root: './',
+        livereload: true
     });
 });
 
-gulp.task('open', function(){
-    gulp.src('./index.html')
-    .pipe(open({
-        app: 'Chrome'
-    }));
+gulp.task('open-browser', function(){
+  gulp.src(__filename)
+  .pipe(open({uri: 'http://localhost:1337'}));
 });
 
-gulp.task('default', ['connect', 'css', 'open', 'stream']);
+gulp.task('livereload', function() {
+  return gulp.src(allSources)
+    .pipe(connect.reload());
+});
+
+
+gulp.task('watch', function() {
+    gulp.watch(['*/**/*.css', '!dest/**/*'], ['css']);
+    gulp.watch(allSources, ['livereload']);
+})
+
+gulp.task('default', ['server', 'open-browser', 'watch']);
+gulp.task('server', ['server']);
