@@ -114,11 +114,11 @@ textarea {
 @keyframes enter-from-top {
     0% {
         opacity: 0;
-        transform: translateY(-50px);
+        transform: translateY(-30px);
     }
     50% {
         opacity: 0;
-        transform: translateY(-50px);
+        transform: translateY(-30px);
     }
     100% {
         opacity: 1;
@@ -129,11 +129,11 @@ textarea {
 @keyframes enter-from-bottom {
     0% {
         opacity: 0;
-        transform: translateY(50px);
+        transform: translateY(30px);
     }
     50% {
         opacity: 0;
-        transform: translateY(50px);
+        transform: translateY(30px);
     }
     100% {
         opacity: 1;
@@ -141,12 +141,27 @@ textarea {
     }
 }
 
+@keyframes enter-from-back {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    50% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
 .ld-time {
     animation: enter-from-top 1 2s ease-out;
     display: block;
-    font-size: 13.6vw;
+    font-size: 20rem;
     font-weight: lighter;
-    margin-bottom: 5vh;
     text-align: center;
     transform: translateY(0);
     width: 100%;
@@ -161,8 +176,16 @@ textarea {
     width: 100%;
 }
 
+.ld-quote-content {
+    animation: enter-from-back 1 2s ease-out;
+    font-size: 6rem;
+    font-weight: lighter;
+    margin: 2em 0;
+    transform: scale(1);
+}
+
 .ld-weather--today {
-    font-size: 5vw;
+    font-size: 8rem;
     font-weight: lighter;
     margin: 0 4rem 0 0;
     opacity: 0.9;
@@ -176,7 +199,7 @@ textarea {
     list-style: none;
     justify-content: space-between;
     margin: 0;
-    font-size: 3.35vw;
+    font-size: 5rem;
     padding: 0;
 }
 
