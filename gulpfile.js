@@ -30,6 +30,14 @@ gulp.task('server', function () {
     });
 });
 
+gulp.task('prod-server', function () {
+    connect.server({
+        port: 8080,
+        root: './',
+        livereload: false
+    });
+});
+
 gulp.task('open-browser', function(){
   gulp.src(__filename)
   .pipe(open({uri: 'http://localhost:1337'}));
@@ -47,4 +55,4 @@ gulp.task('watch', function() {
 })
 
 gulp.task('default', ['server', 'open-browser', 'watch']);
-gulp.task('prod', ['css', 'server']);
+gulp.task('prod', ['css', 'prod-server']);
