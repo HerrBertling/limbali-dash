@@ -4,7 +4,7 @@
   "description": "Simple JS dashboard",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm install && bower install && gulp"
   },
   "repository": {
     "type": "git",
