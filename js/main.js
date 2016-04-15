@@ -25,7 +25,7 @@ $(document).ready(function() {
             html = '<h2 class="ld-weather--today"><i class="wi wi-yahoo-'+weather.code+'"></i>'+weather.temp+'&deg;'+weather.units.temp+'</h2>';
             html += '<ul class="ld-weather--forecast">';
             for(var i=0;i<5;i++) {
-                html += '<li class="ld-weather--forecast-item"><i class="wi wi-yahoo-'+weather.code+'"></i>'+weather.forecast[i].day+ '<br>' +weather.forecast[i].high+'&deg;</li>';
+                html += '<li class="ld-weather--forecast-item"><i class="wi wi-yahoo-'+weather.forecast[i].code+'"></i>'+weather.forecast[i].day+ '<br>' +weather.forecast[i].high+'&deg;</li>';
             }
             html += '</ul>';
             $(".ld-weather").html(html);
