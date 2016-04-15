@@ -4,8 +4,7 @@
   "description": "Simple JS dashboard",
   "main": "index.js",
   "scripts": {
-    "start": "npm install && bower install && gulp",
-    "server": "rm -rf ./node_modules/ && nvm use && npm install && bower install && gulp server"
+    "start": "npm install && bower install && gulp"
   },
   "repository": {
     "type": "git",
