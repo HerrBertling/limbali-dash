@@ -56,6 +56,6 @@ $(document).ready(function() {
     setInterval(updateClock, 10000);
     setInterval(setBodyBG, 60000);
     setInterval(updateWeather, 900000);
-    setInterval(randomQuote, (Math.floor(Math.random()*4) + 1) * 6000);
+    setInterval(randomQuote, (Math.floor(Math.random()*4) + 1) * 60000);
 
 });
