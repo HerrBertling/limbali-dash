@@ -10,8 +10,8 @@ $(document).ready(function() {
 
     function updateDate(){
         var d = new Date();
-        var weekday = (d.getDay() < 10 ? "0":"") + d.getDay();
-        var month = (d.getMonth() < 10 ? "0":"") + d.getMonth();
+        var weekday = (d.getDate() < 10 ? "0":"") + d.getDate();
+        var month = ((d.getMonth() + 1) < 10 ? "0":"") + (d.getMonth() + 1);
         var year = d.getFullYear();
 
         var currentDate = weekday + "." + month + "." + year;
