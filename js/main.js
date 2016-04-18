@@ -8,6 +8,17 @@ $(document).ready(function() {
         $('.ld-time').html(currentTime);
     }
 
+    function updateDate(){
+        var d = new Date();
+        var weekday = (d.getDay() < 10 ? "0":"") + d.getDay();
+        var month = (d.getMonth() < 10 ? "0":"") + d.getMonth();
+        var year = d.getFullYear();
+
+        var currentDate = weekday + "." + month + "." + year;
+
+        $('.ld-date').html(currentDate);
+    }
+
     function setBodyBG() {
         var randomBgNum = Math.floor(Math.random()*11) + 1;
         $('body').removeClass();
@@ -23,7 +34,7 @@ $(document).ready(function() {
                 html = '<h2 class="ld-weather--today"><i class="wi wi-yahoo-'+weather.code+'"></i>'+weather.temp+'&deg;'+weather.units.temp+'</h2>';
                 html += '<ul class="ld-weather--forecast">';
                 for(var i=0;i<5;i++) {
-                    html += '<li class="ld-weather--forecast-item"><i class="wi wi-yahoo-'+weather.forecast[i].code+'"></i>'+weather.forecast[i].day+ '<br>' +weather.forecast[i].high+'&deg;</li>';
+                    html += '<li class="ld-weather--forecast-item"><i class="wi wi-yahoo-'+weather.forecast[i].code+'"></i><span class="ld-weather--forecast-content">'+ weather.forecast[i].day + '<br />' + weather.forecast[i].high+'&deg;</span></li>';
                 }
                 html += '</ul>';
                 $(".ld-weather").html(html);
@@ -34,28 +45,14 @@ $(document).ready(function() {
         });
     }
 
-    var quotes = [
-        "💪 Fridel is stronger than Matze! 💪",
-        "✨ You are awesome! ✨",
-        "🍼 Drink enough water, will you? 🍼",
-        "🏃 Get up and stretch from time to time 🏃",
-        "🐣 Talk to someone you don't really know 🐣",
-        "🎈 Hello, handsome 🎈"
-    ];
-
-    function randomQuote() {
-        var currentQuoteNum = Math.floor(Math.random()*quotes.length);
-        $('.ld-quote-content').replaceWith('<h3 class="ld-quote-content">' + quotes[currentQuoteNum] + '</h3>');
-    }
-
     setBodyBG();
     updateClock();
     updateWeather();
-    randomQuote();
+    updateDate();
 
     setInterval(updateClock, 10000);
     setInterval(setBodyBG, 60000);
     setInterval(updateWeather, 900000);
-    setInterval(randomQuote, (Math.floor(Math.random()*4) + 1) * 60000);
+    setInterval(updateDate, 3600000);
 
 });

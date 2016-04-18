@@ -106,7 +106,7 @@ textarea {
     flex-direction: column;
     font-weight: lighter;
     height: 100vh;
-    justify-content: center;
+    justify-content: space-around;
     min-height: 20rem;
     width: 100vw;
 }
@@ -157,14 +157,24 @@ textarea {
 }
 
 
-.ld-time {
+.ld-dateTimeWrapper {
     animation: enter-from-top 1 2s ease-out;
-    display: block;
-    font-size: 20rem;
+    transform: translateY(0);
     font-weight: lighter;
     text-align: center;
-    transform: translateY(0);
+}
+
+.ld-time {
+    display: block;
+    font-size: 36rem;
     width: 100%;
+}
+
+.ld-date {
+    font-size: 8rem;
+    opacity: 0.3;
+    display: block;
+    text-align: center;
 }
 
 .ld-weather {
@@ -176,16 +186,8 @@ textarea {
     width: 100%;
 }
 
-.ld-quote-content {
-    animation: enter-from-back 1 2s ease-out;
-    font-size: 6rem;
-    font-weight: lighter;
-    margin: 2em 0;
-    transform: scale(1);
-}
-
 .ld-weather--today {
-    font-size: 8rem;
+    font-size: 16rem;
     font-weight: lighter;
     margin: 0 4rem 0 0;
     opacity: 0.9;
@@ -199,18 +201,26 @@ textarea {
     list-style: none;
     justify-content: space-between;
     margin: 0;
-    font-size: 5rem;
+    font-size: 8rem;
     padding: 0;
 }
 
 .ld-weather--forecast-item {
-    opacity: 0.7;
+    opacity: 0.5;
     margin-right: 2rem;
     text-align: center;
 }
 
+.ld-weather--forecast-item i {
+    line-height: 16rem;
+}
+
 .ld-weather--forecast-item:last-child {
     margin-right: 0;
+}
+
+.ld-weather--forecast-content {
+    font-size: 4rem;
 }
 
 .wi {
