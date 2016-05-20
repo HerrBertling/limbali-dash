@@ -7,41 +7,34 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-        <link rel="stylesheet" href="bower_components/jimdo-ui-library/dist/pattern-library.css">
         <link rel="stylesheet" href="https://webteam.jimstatic.com/brandon-text/base64/brandon-text.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
-        <link rel="stylesheet" href="dest/normalize.css">
-        <link rel="stylesheet" href="dest/main.css">
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+        <link rel="stylesheet" href="dist/style.min.css">
+
     </head>
     <body>
         <div class="ld-wrapper">
-            <time class="ld-time">
-                <span class="jui-spinner">
-                    <?xml version="1.0" encoding="utf-8"?>
-                    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-                    <svg class="jui-spinner__spinner" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
-                        <path d="M16 32c-8.822 0-16-7.178-16-16s7.178-16 16-16c0.552 0 1 0.447 1 1s-0.448 1-1 1c-7.72 0-14 6.28-14 14s6.28 14 14 14 14-6.28 14-14c0-3.74-1.457-7.257-4.103-9.901-0.391-0.391-0.391-1.023 0-1.414s1.023-0.391 1.414 0c3.024 3.022 4.689 7.041 4.689 11.315 0 8.822-7.178 16-16 16z"></path>
-                    </svg>
-                </span>
-            </time>
+            <div class="ld-dateTimeWrapper">
+                <time class="ld-time">
+                    <span class="ld-loader">
+                        <i class="ld-loader-bubble"></i>
+                        <i class="ld-loader-bubble"></i>
+                        <i class="ld-loader-bubble"></i>
+                    </span>
+                </time>
+                <span class="ld-date"></span>
+            </div>
             <div class="ld-weather">
-                <span class="jui-spinner">
-                    <?xml version="1.0" encoding="utf-8"?>
-                    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-                    <svg class="jui-spinner__spinner" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
-                        <path d="M16 32c-8.822 0-16-7.178-16-16s7.178-16 16-16c0.552 0 1 0.447 1 1s-0.448 1-1 1c-7.72 0-14 6.28-14 14s6.28 14 14 14 14-6.28 14-14c0-3.74-1.457-7.257-4.103-9.901-0.391-0.391-0.391-1.023 0-1.414s1.023-0.391 1.414 0c3.024 3.022 4.689 7.041 4.689 11.315 0 8.822-7.178 16-16 16z"></path>
-                    </svg>
+                <span class="ld-loader">
+                    <i class="ld-loader-bubble"></i>
+                    <i class="ld-loader-bubble"></i>
+                    <i class="ld-loader-bubble"></i>
                 </span>
             </div>
 
         </div>
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script>window.jQuery || document.write('<script src="bower_components/jquery/dist/jquery.min.js"><\/script>')</script>
-        <script type="text/javascript" src="bower_components/simpleWeather/jquery.simpleWeather.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="dist/main.min.js"></script>
     </body>
 </html>
+js/main.js"></script><!-- endbuild --></body></html>
