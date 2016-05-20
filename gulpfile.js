@@ -7,8 +7,13 @@ var nano = require('gulp-cssnano');
 var open = require('gulp-open');
 var connect = require('gulp-connect');
 var watch = require('gulp-watch');
+var htmlmin = require('gulp-htmlmin');
+var useref = require('gulp-useref');
+var uglify = require('gulp-uglify');
+var gulpIf = require('gulp-if');
+var ghPages = require('gulp-gh-pages');
 
-var allSources = ['dest/*', '*.html', 'js/**/*.js'];
+var allSources = ['postcss/*', '*.html', 'js/**/*.js'];
 
 gulp.task('css', function () {
     var processors = [
@@ -16,10 +21,9 @@ gulp.task('css', function () {
         cssnext,
         precss
     ];
-    gulp.src('./css/*.css')
+    gulp.src('./postcss/*.css')
         .pipe(postcss(processors))
-        .pipe(nano())
-        .pipe(gulp.dest('./dest'));
+        .pipe(gulp.dest('./css'));
 });
 
 gulp.task('server', function () {
@@ -38,6 +42,19 @@ gulp.task('prod-server', function () {
     });
 });
 
+gulp.task('useref', function(){
+    return gulp.src('*.html')
+        .pipe(useref())
+        .pipe(gulpIf('*.js', uglify()))
+        .pipe(gulpIf('*.css', nano()))
+        .pipe(gulp.dest('./dist'))
+});
+
+gulp.task('copyfonts', function() {
+    return gulp.src('./node_modules/weather-icons/font/**/*.{eot,ttf,woff,woff2,svg}')
+        .pipe(gulp.dest('./dist/font'));
+});
+
 gulp.task('open-browser', function(){
   gulp.src(__filename)
   .pipe(open({uri: 'http://localhost:1337'}));
@@ -48,11 +65,17 @@ gulp.task('livereload', function() {
     .pipe(connect.reload());
 });
 
-
 gulp.task('watch', function() {
-    gulp.watch(['*/**/*.css', '!dest/**/*'], ['css']);
+    gulp.watch(['*/**/*.css', '!dist/**/*'], ['css']);
     gulp.watch(allSources, ['livereload']);
 })
+
+gulp.task('deploy', function() {
+    return gulp.src('./dist/**/*')
+        .pipe(ghPages());
+});
+
+gulp.task('build', ['css', 'copyfonts', 'useref', 'deploy']);
 
 gulp.task('default', ['server', 'open-browser', 'watch']);
 gulp.task('prod', ['css', 'prod-server']);

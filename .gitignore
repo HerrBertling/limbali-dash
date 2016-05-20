@@ -6,4 +6,3 @@ bower_components/
 .tmp/
 .node-version
 *.iml
-dest/

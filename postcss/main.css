@@ -1,0 +1,455 @@
+/*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: white;
+    font-family: Brandon Text, Anivers, Helvetica, Arial, sans-serif;
+    font-size: 62.5%;
+    line-height: 1;
+}
+
+body {
+    transition: background-color 1000ms ease-in-out;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+.ld-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-weight: lighter;
+    height: 100vh;
+    justify-content: space-around;
+    min-height: 20rem;
+    width: 100vw;
+}
+
+@keyframes enter-from-top {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    50% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes enter-from-bottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    50% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes enter-from-back {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    50% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.ld-dateTimeWrapper {
+    animation: enter-from-top 1 2s ease-out;
+    transform: translateY(0);
+    font-weight: lighter;
+    text-align: center;
+}
+
+.ld-time {
+    display: block;
+    font-size: 36rem;
+    width: 100%;
+}
+
+.ld-date {
+    font-size: 8rem;
+    opacity: 0.3;
+    display: block;
+    text-align: center;
+}
+
+.ld-weather {
+    align-items: center;
+    animation: enter-from-bottom 1 2s ease-out;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.ld-weather--today {
+    font-size: 16rem;
+    font-weight: lighter;
+    margin: 0 4rem 0 0;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.ld-weather--forecast {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    justify-content: space-between;
+    margin: 0;
+    font-size: 8rem;
+    padding: 0;
+}
+
+.ld-weather--forecast-item {
+    opacity: 0.5;
+    margin-right: 2rem;
+    text-align: center;
+}
+
+.ld-weather--forecast-item i {
+    line-height: 16rem;
+}
+
+.ld-weather--forecast-item:last-child {
+    margin-right: 0;
+}
+
+.ld-weather--forecast-content {
+    font-size: 4rem;
+}
+
+.wi {
+    display: block;
+    padding: 2rem 2rem 4rem;
+}
+
+.ld-loader {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 4vh auto;
+    width: 8vw;
+}
+
+.ld-loader-bubble {
+    animation: loader-growth 1.8s infinite ease-in-out;
+    animation-delay: 0.4s;
+    background-color: white;
+    border-radius: 50%;
+    display: block;
+    height: 2vw;
+    transform-origin: center center;
+    width: 2vw;
+}
+
+.ld-loader-bubble:first-child {
+    animation-delay: 0s;
+}
+
+.ld-loader-bubble:last-child {
+    animation-delay: 0.8s;
+}
+
+@keyframes loader-growth {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.2;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.ld-bg-0 { background-color: #FFB619}
+.ld-bg-1 { background-color: #F56E20}
+.ld-bg-2 { background-color: #EB3D41}
+.ld-bg-3 { background-color: #C0D34B}
+.ld-bg-4 { background-color: #6DB553}
+.ld-bg-5 { background-color: #5CBF98}
+.ld-bg-6 { background-color: #7CD6EB}
+.ld-bg-7 { background-color: #1BA9E1}
+.ld-bg-8 { background-color: #4E75B9}
+.ld-bg-9 { background-color: #F0768D}
+.ld-bg-10 { background-color: #D15296}
+.ld-bg-11 { background-color: #7F5496}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after,
+    *:first-letter,
+    *:first-line {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
