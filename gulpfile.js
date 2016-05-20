@@ -47,7 +47,7 @@ gulp.task('useref', function(){
         .pipe(useref())
         .pipe(gulpIf('*.js', uglify()))
         .pipe(gulpIf('*.css', nano()))
-        .pipe(gulp.dest('./dist'))
+        .pipe(gulp.dest('dist'))
 });
 
 gulp.task('copyfonts', function() {
