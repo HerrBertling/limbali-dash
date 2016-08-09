@@ -172,7 +172,7 @@ textarea {
 
 .ld-date {
     font-size: 8rem;
-    opacity: 0.3;
+    opacity: 0.7;
     display: block;
     text-align: center;
 }
@@ -190,7 +190,6 @@ textarea {
     font-size: 16rem;
     font-weight: lighter;
     margin: 0 4rem 0 0;
-    opacity: 0.9;
     text-align: center;
 }
 
@@ -206,7 +205,7 @@ textarea {
 }
 
 .ld-weather--forecast-item {
-    opacity: 0.5;
+    opacity: 0.7;
     margin-right: 2rem;
     text-align: center;
 }
